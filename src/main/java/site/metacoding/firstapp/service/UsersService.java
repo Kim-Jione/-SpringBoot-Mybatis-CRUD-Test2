@@ -1,10 +1,10 @@
-package site.metacoding.firstapp.web;
+package site.metacoding.firstapp.service;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.firstapp.domain.Users;
-import site.metacoding.firstapp.domain.UsersDao;
+import site.metacoding.firstapp.domain.users.Users;
+import site.metacoding.firstapp.domain.users.UsersDao;
 import site.metacoding.firstapp.web.dto.request.JoinDto;
 import site.metacoding.firstapp.web.dto.request.LoginDto;
 

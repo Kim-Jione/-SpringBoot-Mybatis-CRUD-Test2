@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.firstapp.domain.UsersDao">
+<mapper namespace="site.metacoding.firstapp.domain.users.UsersDao">
 
 	<select id="login"
-		resultType="site.metacoding.firstapp.domain.Users">
+		resultType="site.metacoding.firstapp.domain.users.Users">
 		SELECT * FROM users WHERE username=#{username} AND
 		password=#{password}
 
@@ -13,13 +13,13 @@
 
 
 	<select id="findByUsername"
-		resultType="site.metacoding.firstapp.domain.Users">
+		resultType="site.metacoding.firstapp.domain.users.Users">
 		SELECT * FROM users WHERE username = #{username}
 	</select>
 
 
 	<select id="findById"
-		resultType="site.metacoding.firstapp.domain.Users">
+		resultType="site.metacoding.firstapp.domain.users.Users">
 		SELECT * FROM users WHERE id = #{id}
 
 	</select>
@@ -33,7 +33,7 @@
 
 
 	<select id="findAll"
-		resultType="site.metacoding.firstapp.domain.Users">
+		resultType="site.metacoding.firstapp.domain.users.Users">
 		SELECT * FROM users ORDER BY id DESC
 	</select>
 

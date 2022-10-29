@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.firstapp.domain.buy.BuyDao">
+
+	<select id="findById"
+		resultType="site.metacoding.firstapp.domain.buy.Buy">
+		SELECT * FROM buy WHERE id=#{id}
+	</select>
+
+	<select id="findAll"
+		resultType="site.metacoding.firstapp.domain.buy.Buy">
+		SELECT * FROM buy
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO buy(usersId, productId, createdAt)
+		VALUES(#{usersId},#{productId}, now())
+	</insert>
+
+	<update id="update">
+
+	</update>
+
+	<delete id="deleteById">
+		DELETE FROM buy WHERE id = #{id}
+	</delete>
+
+</mapper>

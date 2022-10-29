@@ -6,10 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.firstapp.domain.Product;
-import site.metacoding.firstapp.domain.ProductDao;
+import site.metacoding.firstapp.domain.product.Product;
+import site.metacoding.firstapp.domain.product.ProductDao;
 
 @RequiredArgsConstructor
 @Controller
@@ -27,5 +28,11 @@ public class ProductController {
 	    public String detail(@PathVariable Integer id, Model model) {
 	    	model.addAttribute("detail", productDao.findById(id));
 	        return "product/detailForm";
+	    }
+	 
+	 @PostMapping("/product/buy")
+	    public String add(Product product) {
+	    	productDao.insert(product);
+	        return "redirect:/";
 	    }
 }
