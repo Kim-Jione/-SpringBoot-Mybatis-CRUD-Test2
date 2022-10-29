@@ -1,4 +1,4 @@
-package site.metacoding.firstapp.web.dto;
+package site.metacoding.firstapp.web.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
