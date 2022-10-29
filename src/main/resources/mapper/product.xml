@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.firstapp.domain.ProductDao">
+
+	<select id="findById"
+		resultType="site.metacoding.firstapp.domain.Product">
+		SELECT * FROM product WHERE product_id = #{productId}
+	</select>
+
+	<select id="findByProductName"
+		resultType="site.metacoding.firstapp.domain.Product">
+		SELECT * FROM product WHERE product_name = #{productName}
+	</select>
+
+	<select id="findAll"
+		resultType="site.metacoding.firstapp.domain.Product">
+		SELECT * FROM product ORDER BY product_id DESC
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="productId">
+
+	</insert>
+
+	<update id="update">
+
+	</update>
+
+	<delete id="deleteById">
+
+	</delete>
+
+</mapper>

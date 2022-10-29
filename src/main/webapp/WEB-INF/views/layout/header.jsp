@@ -27,7 +27,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/">Product</a>
+			<a class="navbar-brand" href="/">Users</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
@@ -37,6 +37,8 @@
 					<li class="nav-item"><a class="nav-link" href="/loginForm">로그인</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="/joinForm">회원가입</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/listForm">상품목록</a>
 					</li>
 
 				</ul>

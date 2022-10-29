@@ -41,7 +41,7 @@ public class UsersController {
 		return new CMRespDto<>(1, "성공", isSame);
 	}
 	
-	@GetMapping({"/","/loginForm"})
+	@GetMapping("/loginForm")
 	public String loginForm(Model model, HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
