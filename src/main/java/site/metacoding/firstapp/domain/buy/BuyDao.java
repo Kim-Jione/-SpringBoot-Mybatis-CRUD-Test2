@@ -4,8 +4,9 @@ import java.util.List;
 
 public interface BuyDao {
 	public void insert(Buy buy); 
-	public List<Buy> findAll();
-	public Buy findById(Integer id);
+	public List<Buy> findAll(Integer usersId);
+	public Buy findById(Integer usersId);
 	public void update(Buy buy);
-	public void deleteById(Integer id);
+	public void deleteById(Integer buyId);
+	public void updateQty(Integer amount);
 }

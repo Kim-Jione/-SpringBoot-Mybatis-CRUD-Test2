@@ -13,5 +13,6 @@ public class Buy {
 	private Integer id;
 	private Integer productId;
 	private Integer UsersId;
+	private Integer amount;
 	private Timestamp createdAt;	
 }
