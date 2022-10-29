@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.Users;
 import site.metacoding.firstapp.domain.UsersDao;
 import site.metacoding.firstapp.web.dto.request.JoinDto;
+import site.metacoding.firstapp.web.dto.request.LoginDto;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +24,18 @@ public class UsersService {
 			return false;
 		}else { // 아이디가 중복됨
 			return true;
+		}
+	}
+	
+	public Users 로그인(LoginDto loginDto) {
+		Users usersPS = usersDao.findByUsername(loginDto.getUsername());
+		if(usersPS == null) {
+			return null;
+		}
+		if(usersPS.getPassword().equals(loginDto.getPassword())) {
+			return usersPS;
+		}else {
+			return null;
 		}
 	}
 }
