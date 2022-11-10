@@ -8,11 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.firstapp.domain.buy.Buy;
-import site.metacoding.firstapp.domain.buy.BuyDao;
+import site.metacoding.firstapp.domain.orders.OrdersDao;
 import site.metacoding.firstapp.domain.product.Product;
 import site.metacoding.firstapp.domain.product.ProductDao;
 import site.metacoding.firstapp.service.ProductService;
@@ -22,7 +20,7 @@ import site.metacoding.firstapp.service.ProductService;
 public class ProductController {
 	private final ProductService productService;
 	private final ProductDao productDao;
-	private final BuyDao buyDao;
+	private final OrdersDao buyDao;
 	private final HttpSession session;
 
 	// 상품 목록 페이지

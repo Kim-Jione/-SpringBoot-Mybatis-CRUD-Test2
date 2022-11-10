@@ -1,4 +1,4 @@
-package site.metacoding.firstapp.domain.buy;
+package site.metacoding.firstapp.domain.orders;
 
 import java.sql.Timestamp;
 
@@ -9,10 +9,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Buy {
-	private Integer id;
+public class Orders {
+	private Integer ordersId;
 	private Integer productId;
-	private Integer UsersId;
-	private Integer amount;
+	private Integer usersId;
+	private Integer productCount;
 	private Timestamp createdAt;	
 }

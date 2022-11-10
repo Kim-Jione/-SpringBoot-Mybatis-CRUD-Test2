@@ -10,6 +10,6 @@ public interface UsersDao {
 	public Users findById(Integer id);
 	public Users findByUsername(String username);
 	public List<Users> findAll();
-	public void update(Users userr); 
+	public void update(Users user); 
 	public void delete(Integer id);	
 }
