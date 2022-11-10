@@ -60,8 +60,15 @@ public class UsersController {
 			return new CMRespDto<>(-1, "로그인 실패", null);
 		}
 		session.setAttribute("principal", principal);
-		
+
 		return new CMRespDto<>(1, "로그인성공", null);
+	}
+	
+	// 로그아웃
+	@GetMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		return "redirect:/loginForm";
 	}
 	
 	

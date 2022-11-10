@@ -42,6 +42,7 @@ create table product(
     product_name varchar(20) NOT null UNIQUE,
     product_price INT NOT null,
     product_qty INT NOT null,
+    users_id int,
     created_at TIMESTAMP NOT null
 );
 
@@ -61,8 +62,8 @@ insert into users(username, password, email, createdAt) values('ssar', '1234', '
 insert into users(username, password, email, createdAt) values('cos', '1234', 'cos@nate.com', NOW());
 insert into users(username, password, email, createdAt) values('hong', '1234', 'hong@nate.com', NOW());
 
-INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('바나나', 3000, 98, NOW());
-INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('딸기', 2000, 100, NOW());
+INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('바나나', 3000, 98,1, NOW());
+INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('딸기', 2000, 100,2, NOW());
 
 INSERT INTO orders(product_id, users_id, product_count, created_at) VALUES(1, 1, 10, NOW());
 INSERT INTO orders(product_id, users_id, product_count, created_at) VALUES(2, 2, 20, NOW());

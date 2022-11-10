@@ -26,8 +26,7 @@ public class ProductController {
 	// 상품 목록 페이지
 	@GetMapping({ "/listForm", "/" })
 	public String list(Model model) {
-		List<Product> product = productDao.findAll();
-		model.addAttribute("product", product);
+		model.addAttribute("product", productDao.findAll());
 		return "product/listForm";
 	}
 
@@ -36,12 +35,6 @@ public class ProductController {
 	public String detail(@PathVariable Integer productId, Model model) {
 		model.addAttribute("detail", productDao.findById(productId));
 		return "product/detailForm";
-	}
-
-	// 구매목록 페이지
-	@GetMapping("/buyList")
-	public String buyList() {
-		return "buy/historyForm";
 	}
 
 }
