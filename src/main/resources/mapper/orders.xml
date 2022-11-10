@@ -10,7 +10,7 @@
 	</select>
 
 	<select id="findAll"
-		resultType="site.metacoding.firstapp.domain.orders.Orders">
+		resultType="site.metacoding.firstapp.web.dto.request.OrdersProductDto">
 		select *
 		from product 
 		where users_id = #{usersId}

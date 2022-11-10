@@ -14,5 +14,5 @@ public class Orders {
 	private Integer productId;
 	private Integer usersId;
 	private Integer productCount;
-	private Timestamp createdAt;	
+	private Timestamp createdAt;
 }

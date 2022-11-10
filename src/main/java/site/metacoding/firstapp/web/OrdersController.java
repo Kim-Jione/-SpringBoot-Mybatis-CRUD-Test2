@@ -20,7 +20,7 @@ public class OrdersController {
 	@GetMapping("orders/ordersList")
 	public String ordersList(Model model) {
 		Users userPS = (Users) session.getAttribute("principal");
-		model.addAttribute("orderList", ordersDao.findAll(userPS.getUsersId()));
+		model.addAttribute("ordersList", ordersDao.findAll(userPS.getUsersId()));
 		System.out.println(userPS.getUsersId());	
 		return "orders/historyForm";
 	}

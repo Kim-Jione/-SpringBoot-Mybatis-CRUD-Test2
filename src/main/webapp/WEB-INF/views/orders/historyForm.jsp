@@ -13,8 +13,6 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
         </thead>
         <tbody>
             <c:forEach var="ordersList" items="${ordersList}">
-                <input id="usersId" type="hidden" value="${detail.usersId}" />
-
                 <tr>
                     <td>${ordersList.productId}</td>
                     <td>${ordersList.productName}</td>
