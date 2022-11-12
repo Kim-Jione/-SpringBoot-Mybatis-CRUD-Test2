@@ -15,9 +15,9 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
             <c:forEach var="ordersList" items="${ordersList}">
                 <tr>
                     <td>${ordersList.productId}</td>
-                    <td>${ordersList.productName}</td>
-                    <td>${ordersList.productPrice}</td>
-                    <td>${ordersList.productQty}</td>
+                    <td>${ordersList.ordersName}</td>
+                    <td>${ordersList.ordersPrice}</td>
+                    <td>${ordersList.ordersCount}</td>
                 </tr>
             </c:forEach>
         </tbody>

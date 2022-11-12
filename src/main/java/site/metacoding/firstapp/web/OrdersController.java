@@ -23,9 +23,8 @@ public class OrdersController {
 
 	@GetMapping("/orders/ordersList")
 	public String ordersList(Model model) {
-		Users userPS = (Users) session.getAttribute("principal");
-		model.addAttribute("ordersList", ordersDao.findAll());
-		System.out.println(userPS.getUsersId());
+		Users principal = (Users) session.getAttribute("principal");
+		model.addAttribute("ordersList", ordersDao.findAll(principal.getUsersId()));
 		return "orders/orderListForm";
 	}
 
