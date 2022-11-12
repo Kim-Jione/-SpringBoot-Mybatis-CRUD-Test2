@@ -76,38 +76,28 @@ INSERT INTO orders(orders_name, orders_price, orders_count,  product_id, users_i
 
 <img src="https://user-images.githubusercontent.com/106166409/201482799-f65b1ef1-8ba9-4754-b2d7-c7596a54cc9c.png"  width="1000"/>
 
-
-
 로그인 페이지
 <img src="https://user-images.githubusercontent.com/106166409/201482979-d188b845-cfb1-440b-b313-ef1a414869f3.png"  width="1000"/>
-
-
 
 상품목록 페이지
 
 <img src="https://user-images.githubusercontent.com/106166409/201483036-4b430ef2-3f00-4f73-8cb4-7fdbd86272ba.png"  width="1000"/>
 
-
 상품 상세보기 페이지
 
 <img src="https://user-images.githubusercontent.com/106166409/201483108-c3ae0278-896a-4012-af4a-7968d31cd63c.png"  width="1000"/>
-
 
 구매목록 페이지
 
 <img src="https://user-images.githubusercontent.com/106166409/201483146-76658161-6548-4a61-8a69-f81b562c9e10.png"  width="1000"/>
 
-
-
 ### 7. 구현기능
 
 상품 구매시 재고 변경
-<img src="https://user-images.githubusercontent.com/106166409/201483486-ef91d914-df47-4674-9940-3b4b892d8d78.gif"  width="1000"/>
+<img src="https://user-images.githubusercontent.com/106166409/201495490-4d08f858-afdf-435c-a02b-6d1c1b5b2603.gif"  width="1000"/>
 
 상품 재고 0 미만 될시 구매되지 않고 메인 페이지로 이동
-<img src="https://user-images.githubusercontent.com/106166409/201483718-1060f738-2c6b-41c1-8cc6-02f2dbf8e37a.gif"  width="1000"/>
+<img src="https://user-images.githubusercontent.com/106166409/201495551-f01ae086-519b-471d-945d-025efad96114.gif"  width="1000"/>
 
 비로그인 상태로 구매시 로그인 페이지로 이동
-<img src="https://user-images.githubusercontent.com/106166409/201483716-8e71578f-b3db-43e3-a068-0d05d2e0ab77.gif"  width="1000"/>
-
-
+<img src="https://user-images.githubusercontent.com/106166409/201495589-b786c75f-1fc6-4498-a0f9-b87911f61598.gif"  width="1000"/>
