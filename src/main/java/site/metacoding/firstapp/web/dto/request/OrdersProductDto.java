@@ -2,18 +2,19 @@ package site.metacoding.firstapp.web.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.metacoding.firstapp.domain.orders.Orders;
 
 @Setter
 @Getter
 public class OrdersProductDto {
-
-	// 뷰로부터 받을 값
+	private String ordersName;
+	private Integer ordersPrice;
+	private Integer ordersCount;
 	private Integer productId;
-    private String productName;
-    private Integer productQty;
 
-	// DB로부터 가져올 값
-	private Integer productCount;
-	private Integer productPrice;
+	public Orders toEntity(Integer usersId) {
+		Orders orders = new Orders(this.ordersName, this.ordersPrice, this.ordersCount, this.productId, usersId);
+		return orders;
+	}
+
 }
-	

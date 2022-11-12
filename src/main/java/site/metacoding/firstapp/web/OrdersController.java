@@ -5,23 +5,42 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.orders.OrdersDao;
+import site.metacoding.firstapp.domain.product.ProductDao;
 import site.metacoding.firstapp.domain.users.Users;
+import site.metacoding.firstapp.web.dto.request.OrdersProductDto;
 
 @RequiredArgsConstructor
 @Controller
 public class OrdersController {
-
+	private final ProductDao productDao;
 	private final OrdersDao ordersDao;
 	private final HttpSession session;
 
-	@GetMapping("orders/ordersList")
+	@GetMapping("/orders/ordersList")
 	public String ordersList(Model model) {
 		Users userPS = (Users) session.getAttribute("principal");
-		model.addAttribute("ordersList", ordersDao.findAll(userPS.getUsersId()));
-		System.out.println(userPS.getUsersId());	
-		return "orders/historyForm";
+		model.addAttribute("ordersList", ordersDao.findAll());
+		System.out.println(userPS.getUsersId());
+		return "orders/orderListForm";
+	}
+
+	// 상품 구매하기
+	@PostMapping("/orders/{productId}")
+	public String ordersProduct(@PathVariable Integer productId,
+			OrdersProductDto ordersProductDto) {
+		Users principal = (Users) session.getAttribute("principal");
+		System.out.println("디버그: 상품 구매하기");
+		System.out.println("디버그: " + productId);
+		if (principal == null) {
+			return "redirect:/loginForm";
+		}
+		productDao.productQtyUpdate(ordersProductDto);
+		ordersDao.insert(ordersProductDto.toEntity(principal.getUsersId()));
+		return "redirect:/";
 	}
 }

@@ -1,7 +1,5 @@
 package site.metacoding.firstapp.web;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -10,17 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.firstapp.domain.orders.OrdersDao;
-import site.metacoding.firstapp.domain.product.Product;
 import site.metacoding.firstapp.domain.product.ProductDao;
-import site.metacoding.firstapp.service.ProductService;
 
 @RequiredArgsConstructor
 @Controller
 public class ProductController {
-	private final ProductService productService;
 	private final ProductDao productDao;
-	private final OrdersDao buyDao;
 	private final HttpSession session;
 
 	// 상품 목록 페이지

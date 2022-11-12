@@ -10,9 +10,9 @@ public interface OrdersDao {
 
 	public Orders findById(Integer ordersId);
 
-	public List<OrdersProductDto> findAll(Integer usersId);
+	public List<OrdersProductDto> findAll();
 
-	public void update(Orders orders);
+	public void orderUpdatebyProductQty(Orders orders);
 
 	public void delete(Integer ordersId);
 }

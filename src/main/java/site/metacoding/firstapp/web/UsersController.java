@@ -24,24 +24,24 @@ import site.metacoding.firstapp.web.dto.response.CMRespDto;
 public class UsersController {
 	private final UsersService usersService;
 	private final HttpSession session;
-	
+
 	@GetMapping("/joinForm")
 	public String joinForm() {
 		return "users/joinForm";
 	}
-	
+
 	@PostMapping("/join")
 	public @ResponseBody CMRespDto<?> join(@RequestBody JoinDto joinDto) {
 		usersService.회원가입(joinDto);
 		return new CMRespDto<>(1, "회원가입성공", null);
 	}
-	
+
 	@GetMapping("/users/usernameSameCheck")
 	public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String username) {
 		boolean isSame = usersService.유저네임중복확인(username);
 		return new CMRespDto<>(1, "성공", isSame);
 	}
-	
+
 	@GetMapping("/loginForm")
 	public String loginForm(Model model, HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
@@ -63,13 +63,12 @@ public class UsersController {
 
 		return new CMRespDto<>(1, "로그인성공", null);
 	}
-	
+
 	// 로그아웃
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 		return "redirect:/loginForm";
 	}
-	
-	
+
 }
