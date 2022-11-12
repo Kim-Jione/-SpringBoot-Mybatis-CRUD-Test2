@@ -42,15 +42,16 @@ create table product(
     product_name varchar(20) NOT null UNIQUE,
     product_price INT NOT null,
     product_qty INT NOT null,
-    users_id int,
     created_at TIMESTAMP NOT null
 );
 
 create table orders(
     orders_id int primary KEY auto_increment,
-    product_id int,
-    users_id int,
-    product_count int,
+    orders_name varchar(20) NOT null,
+    orders_price int NOT null,
+    orders_count int NOT null,
+    product_id int NOT null,
+    users_id int NOT null,
     created_at TIMESTAMP
 );
 ```
@@ -60,14 +61,53 @@ create table orders(
 ```sql
 insert into users(username, password, email, createdAt) values('ssar', '1234', 'ssar@nate.com', NOW());
 insert into users(username, password, email, createdAt) values('cos', '1234', 'cos@nate.com', NOW());
-insert into users(username, password, email, createdAt) values('hong', '1234', 'hong@nate.com', NOW());
 
 INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('바나나', 3000, 98,1, NOW());
 INSERT INTO product(product_name, product_price, product_qty, created_at) VALUES('딸기', 2000, 100,2, NOW());
 
-INSERT INTO orders(product_id, users_id, product_count, created_at) VALUES(1, 1, 10, NOW());
-INSERT INTO orders(product_id, users_id, product_count, created_at) VALUES(2, 2, 20, NOW());
+INSERT INTO orders(orders_name, orders_price, orders_count,  product_id, users_id,  created_at) VALUES('바나나', 3000, 10, 1, 1,  NOW());
+INSERT INTO orders(orders_name, orders_price, orders_count,  product_id, users_id,  created_at) VALUES('딸기', 2000, 20, 2, 2,  NOW());
 
 ```
 
 ### 6. 페이지
+
+회원가입 페이지
+
+<img src="https://user-images.githubusercontent.com/106166409/201482799-f65b1ef1-8ba9-4754-b2d7-c7596a54cc9c.png"  width="1000"/>
+
+
+
+로그인 페이지
+<img src="https://user-images.githubusercontent.com/106166409/201482979-d188b845-cfb1-440b-b313-ef1a414869f3.png"  width="1000"/>
+
+
+
+상품목록 페이지
+
+<img src="https://user-images.githubusercontent.com/106166409/201483036-4b430ef2-3f00-4f73-8cb4-7fdbd86272ba.png"  width="1000"/>
+
+
+상품 상세보기 페이지
+
+<img src="https://user-images.githubusercontent.com/106166409/201483108-c3ae0278-896a-4012-af4a-7968d31cd63c.png"  width="1000"/>
+
+
+구매목록 페이지
+
+<img src="https://user-images.githubusercontent.com/106166409/201483146-76658161-6548-4a61-8a69-f81b562c9e10.png"  width="1000"/>
+
+
+
+### 7. 구현기능
+
+상품 구매시 재고 변경
+<img src="https://user-images.githubusercontent.com/106166409/201483486-ef91d914-df47-4674-9940-3b4b892d8d78.gif"  width="1000"/>
+
+상품 재고 0 미만 될시 구매되지 않고 메인 페이지로 이동
+<img src="https://user-images.githubusercontent.com/106166409/201483718-1060f738-2c6b-41c1-8cc6-02f2dbf8e37a.gif"  width="1000"/>
+
+비로그인 상태로 구매시 로그인 페이지로 이동
+<img src="https://user-images.githubusercontent.com/106166409/201483716-8e71578f-b3db-43e3-a068-0d05d2e0ab77.gif"  width="1000"/>
+
+
