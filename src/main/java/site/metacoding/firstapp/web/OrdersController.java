@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.orders.OrdersDao;
+import site.metacoding.firstapp.domain.product.Product;
 import site.metacoding.firstapp.domain.product.ProductDao;
 import site.metacoding.firstapp.domain.users.Users;
 import site.metacoding.firstapp.web.dto.request.OrdersProductDto;
@@ -37,6 +38,10 @@ public class OrdersController {
 		System.out.println("디버그: " + productId);
 		if (principal == null) {
 			return "redirect:/loginForm";
+		}
+		Product productPS = productDao.findById(productId);
+		if (productPS.getProductQty() - ordersProductDto.getOrdersCount() < 0) {
+			return "redirect:/";
 		}
 		productDao.productQtyUpdate(ordersProductDto);
 		ordersDao.insert(ordersProductDto.toEntity(principal.getUsersId()));
